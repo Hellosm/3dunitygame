@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2028565212}
-  m_IndirectSpecularColor: {r: 0.65112025, g: 0.7745485, b: 0.8357976, a: 1}
+  m_IndirectSpecularColor: {r: 0.6511202, g: 0.77454835, b: 0.8357976, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 4890085278179872738, guid: badef7897b2d5c84a94d7417a963b678, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -128,63 +130,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.056739226
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.3309474
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.019939525
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9417308
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9417308
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.056739226
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.3309474
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.019939525
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -5.3750005
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 38.929
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -4.327
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 9e1cb89bae143d046bb9dba32b57bed0,
-        type: 3}
+    - target: {fileID: 919132149155446097, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
       propertyPath: m_Name
       value: Low Poly Island
       objectReference: {fileID: 0}
@@ -217,7 +207,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.49803925, g: 0.49803925, b: 0.49803925, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -232,7 +222,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -262,7 +252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -22.166, y: 15.373001, z: 0}
 --- !u!1 &1892224931
 GameObject:
@@ -311,6 +301,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -335,6 +326,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1892224934
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -433,6 +425,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &2028565213
