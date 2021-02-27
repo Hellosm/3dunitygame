@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 100;
+    public float speed;
+    public float jumpforce;
     private Rigidbody2D rb;
+    public bool isgrounded;
 
     // Start is called before the first frame update
     void Start()
@@ -13,15 +15,32 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D> ();
     }
 
-
-    public void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        if(collision.collider.tag == "ground")
+        {
+            isgrounded = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.collider.tag == "ground")
+        {
+            isgrounded = false;
+        }
+    }
+    void FixedUpdate()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
 
-        Vector3 tempVect = new Vector3(h, v, 0);
-        tempVect = tempVect.normalized * speed * Time.deltaTime;
-        rb.MovePosition(rb.transform.position + tempVect);
+        Vector2 movevect = new Vector2(x, y);
+        rb.AddForce(movevect * speed, ForceMode2D.Impulse);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isgrounded)
+        {
+            rb.AddForce(new Vector2(0, jumpforce), ForceMode2D.Impulse);
+        }
     }
 
 }
