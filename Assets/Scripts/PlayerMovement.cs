@@ -22,13 +22,6 @@ public class PlayerMovement : MonoBehaviour
             isgrounded = true;
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.collider.tag == "ground")
-        {
-            isgrounded = false;
-        }
-    }
     void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
@@ -37,8 +30,15 @@ public class PlayerMovement : MonoBehaviour
         Vector2 movevect = new Vector2(x, y);
         rb.AddForce(movevect * speed, ForceMode2D.Impulse);
 
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
+        {
+            rb.AddForce(new Vector2(-x, -y) * speed, ForceMode2D.Impulse);
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Space) && isgrounded)
         {
+            isgrounded = false;
             rb.AddForce(new Vector2(0, jumpforce), ForceMode2D.Impulse);
         }
     }
