@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpforce;
     private Rigidbody2D rb;
     public bool isgrounded;
+    public PhysicsMaterial2D ground;
 
     // Start is called before the first frame update
     void Start()
@@ -22,18 +23,13 @@ public class PlayerMovement : MonoBehaviour
             isgrounded = true;
         }
     }
-    void FixedUpdate()
+    void Update()
     {
+        ground.friction = 0;
         float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
 
-        Vector2 movevect = new Vector2(x, y);
-        rb.AddForce(movevect * speed, ForceMode2D.Impulse);
-
-        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
-        {
-            rb.AddForce(new Vector2(-x, -y) * speed, ForceMode2D.Impulse);
-        }
+        Vector2 movevect = new Vector2(x, 0);
+        rb.MovePosition(rb.position + movevect * speed * Time.deltaTime);
 
 
         if (Input.GetKeyDown(KeyCode.Space) && isgrounded)

@@ -118,9 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6baf48090a4bd1d49b01934ffc4141d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10000
+  speed: 1
   jumpforce: 100
   isgrounded: 0
+  ground: {fileID: 6200000, guid: 83da353101324b844b5665586347e787, type: 2}
 --- !u!60 &946057589811691070
 PolygonCollider2D:
   m_ObjectHideFlags: 0
